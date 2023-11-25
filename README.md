@@ -92,7 +92,7 @@ This site was created respecting the Five Planes Of Website Design:<br>
 <hr>
 
 #### User Stories
-* As part of the software development process, we will be referring to this User Stories throughout the project.
+* As part of the software development process, i will be referring to this User Stories throughout the project.
 
   |   EPIC                                |ID|                                User Story                                                   |
   | :-------------------------------------|--|:------------------------------------------------------------------------------------------- |
