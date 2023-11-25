@@ -1,8 +1,11 @@
+<br><br>
+
+<a id="top" href="https://home-shots-c660d38e541d.herokuapp.com/" target="_blank"><img src="documentation/readmeimages/logo.webp"></a><br />
 # HomeShots - A web app for home aesthetics enthusiasts to share images of beautiful homes
 <img src=""><br>
-<hr>
 
-## Table of Content
+<h1 id="contents">Contents</h1>
+
  * [Introduction](#introduction)
  * [Live Site](#live-site)
    + [Backend API repository](#backend-api-repository)
@@ -32,16 +35,26 @@
    + [Existing Features](#existing-features)
 
 
-## Overview
+## Introduction
 HomeShots is a frontend React.js project that runs on Heroku. It aims to provide a platform for Home aesthetics enthusiasts to snap and share beautiful homes<br>
 
 This app allows users to upload photo shots of homes they find interesting. Users can create, edit, add comments and add location details from the frontend once registered & logged in.<br>
 **HomeShots- photo sharing website** was developed using Python (Django), HTML, CSS and JavaScript and storing the data in a PostgreSQL database.
 <br><br>
 
-## User Experience
+## Live Site
+A live version of the site can be found <a href="https://home-shots-c660d38e541d.herokuapp.com/" target="_blank">HERE</a>
 
-### _Strategy_<hr>
+### Backend API repository
+The backend API repository can be found <a href="https://github.com/chikadim/home-shots-backend" target="_blank">HERE</a>
+<br><br>
+
+## User Experience
+This site was created respecting the Five Planes Of Website Design:<br>
+<br>
+
+### _Strategy_
+<hr>
 
 #### Project Goal
 * Create a website for home aesthetics enthusiasts.<br><br>
@@ -76,6 +89,7 @@ This app allows users to upload photo shots of homes they find interesting. User
 * Content strategy outlining the themes, topics, and formats that will appeal to the target audience.<br><br>
 
 ### _Scope_
+<hr>
 
 #### User Stories
 * As part of the software development process, we will be referring to this User Stories throughout the project.
@@ -98,8 +112,8 @@ This app allows users to upload photo shots of homes they find interesting. User
   |                                       |3B| As a user, I can view all the most recent HomeShots posts, ordered by most recently created first so that I can be up to date with the newest content.|
   |                                       |3C| As a user, I can search for HomeShots posts with keywords so that I can find the posts and user profiles I am most interested in.
   |                                       |3D| As a user, I can click on HomeShots post so that I can view the HomeShots and its details. |
-  |                                       |3E| As a user, I can view the number of likes on HomeShots posts so that I can easily see posts that have more like.|
-  |                                       |3F| As a user, I can view the number of comments on HomeShots posts so that I can read other users' opinions.|
+  |                                       |3E| As a user, I can view the number of likes on HomeShots posts so that I can easily see posts that have more likes.|
+  |                                       |3F| As a user, I can view the number of comments on HomeShots posts so that I can read other users' opinions about a post.|
   |                                       |3G| As a user, I can keep scrolling through HomeShots posts on the site, that are loaded for me automatically so that I can not click on "next page" etc.|
   |**POST**                               |  || 
   |                                       |4A| As a signed-in user, I can create a new HomeShots posts and upload an image so that I can share my shots with other users.|
@@ -133,9 +147,12 @@ This app allows users to upload photo shots of homes they find interesting. User
 * Create a section with accounts that is most visited.
 
 **Responsiveness:**
-* Create a responsive design for desktop, tablet and mobile devices<br><br>
+* Create a responsive design for desktop, tablet and mobile devices
+<br><br>
 
-### _Structure_<hr>
+### _Structure_
+<hr>
+
 The structure of the website is divided into pages but with content depending on authentication and user/staff status <br>
 -**Register/Login** pages give the user the possibility to create an account and authenticate for accessing different features.<br>
 -**Logout** feature is a modal that helps user exit their current account;<br>
