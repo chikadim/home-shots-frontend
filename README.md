@@ -1,4 +1,4 @@
-<br><br>
+<br>
 
 <a id="top" href="https://home-shots-c660d38e541d.herokuapp.com/" target="_blank"><img src="documentation/readmeimages/logo.webp"></a><br />
 # HomeShots - A web app for home aesthetics enthusiasts to share images of beautiful homes
@@ -8,7 +8,7 @@
 
  * [Introduction](#introduction)
  * [Live Site](#live-site)
-   + [Backend API repository](#backend-api-repository)
+ * [Backend API repository](#backend-api-repository)
  * [User Experience](#user-experience)
    + [Strategy](#strategy)
      - [Project Goal](#project-goal)
@@ -45,7 +45,7 @@ This app allows users to upload photo shots of homes they find interesting. User
 ## Live Site
 A live version of the site can be found <a href="https://home-shots-c660d38e541d.herokuapp.com/" target="_blank">HERE</a>
 
-### Backend API repository
+## Backend API repository
 The backend API repository can be found <a href="https://github.com/chikadim/home-shots-backend" target="_blank">HERE</a>
 <br><br>
 
