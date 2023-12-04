@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -14,19 +14,24 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { SetCurrentUserContext } from "../../App";
+import logo from "../../assets/logo.webp";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
+import useAlert from "../../hooks/useAlert";
 
 function SignInForm() {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
-  const { username, password } = signInData;
-
+ 
 
   const [errors, setErrors] = useState({});
+  const { setAlert } = useAlert();
 
   const history = useHistory();
   const handleSubmit = async (event) => {
@@ -35,11 +40,17 @@ function SignInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.push("/");
+      console.log(data)
+      setTokenTimestamp(data);
+      history.goBack();
+      // setAlert(`${username} you have logged in succesfully!`, "success");
     } catch (err) {
+      console.log(err)
       setErrors(err.response?.data);
     }
   };
+
+ 
 
   const handleChange = (event) => {
     setSignInData({
@@ -47,6 +58,8 @@ function SignInForm() {
       [event.target.name]: event.target.value,
     });
   };
+
+  const { username, password } = signInData;
 
   return (
     <Row className={styles.Row}>
@@ -58,6 +71,7 @@ function SignInForm() {
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
                 type="text"
+                autoComplete="username"
                 placeholder="Username"
                 name="username"
                 className={styles.Input}
@@ -75,6 +89,7 @@ function SignInForm() {
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
                 type="password"
+                autoComplete="current-password"
                 placeholder="Password"
                 name="password"
                 className={styles.Input}
@@ -91,7 +106,7 @@ function SignInForm() {
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Black}`}
               type="submit"
             >
-              Sign in
+              SIGN IN
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -102,18 +117,16 @@ function SignInForm() {
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account? <span>Sign up now!</span>
+            Don&#39;t have an account? <span>Sign up now!</span>
           </Link>
         </Container>
       </Col>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
-      >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
-        />
+      <Col md={6} className={`my-auto  d-md-block p-2 ${styles.SignInCol}`}>
+        <Container
+          className={`mt-3 ${appStyles.Content} ${styles.SignInUpImage}`}
+        >
+          <Image className={`${appStyles.FillerImage}`} src={logo} />
+        </Container>
       </Col>
     </Row>
   );
