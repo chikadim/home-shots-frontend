@@ -28,7 +28,7 @@ function SignInForm() {
     username: "",
     password: "",
   });
- 
+  const { username, password } = signInData;
 
   const [errors, setErrors] = useState({});
   const { setAlert } = useAlert();
@@ -44,11 +44,9 @@ function SignInForm() {
       history.goBack();
       setAlert(`${username} you have logged in succesfully!`, "success");
     } catch (err) {
-      console.log(err)
       setErrors(err.response?.data);
     }
   };
-
 
   const handleChange = (event) => {
     setSignInData({
@@ -56,8 +54,6 @@ function SignInForm() {
       [event.target.name]: event.target.value,
     });
   };
-
-  const { username, password } = signInData;
 
   return (
     <Row className={styles.Row}>
