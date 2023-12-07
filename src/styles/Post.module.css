@@ -1,0 +1,66 @@
+.Post {
+    background-color: #ffffff;
+    border-radius: 15px; 
+    margin-bottom: 32px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.Post figure,
+h5 {
+    margin: 0 0;
+}
+
+.PostBar {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 8px 30px;
+    border-radius: 15px;
+    border: solid 1px #474747;
+}
+
+.CardTitle {
+    font-weight: 900;
+}
+
+.CardDescription {
+    color: #474747;
+    padding-bottom: 16px;
+}
+
+.Heart {
+    margin-right: 1em;
+}
+
+.Heart:hover {
+    color: #8a8a8a;
+}
+
+.Comments:hover {
+    color: #8a8a8a;
+}
+
+.Comments {
+    margin-right: 1em;
+}
+
+.Recipes:hover {
+    color: #8a8a8a;
+}
+
+span .NoRecipe {
+    margin-top: 16px;
+    align-items: center;
+}
+
+.Date {
+    color: #474747;
+    font-size: .9em;
+}
+
+@media only screen and (max-width: 600px){
+    .Post {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+}
