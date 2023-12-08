@@ -64,7 +64,7 @@ function PostCreateForm() {
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
-      setAlert("foodSNAP created successfully!", "success");
+      setAlert("homeShots created successfully!", "success");
     } catch (err) {
       // console.log(err);
       if (err.response?.status !== 401) {
@@ -149,7 +149,7 @@ function PostCreateForm() {
                 >
                   <Asset
                     src={Upload}
-                    message="Click or tap to upload a foodSNAP"
+                    message="Click or tap to upload a homeShots"
                   />
                 </Form.Label>
               )}
