@@ -17,11 +17,13 @@ import NoResults from "../../assets/no-results.webp";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../../components/profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const currentUser = useCurrentUser();
 
   const [query, setQuery] = useState("");
 
@@ -32,7 +34,7 @@ function PostsPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -44,13 +46,22 @@ function PostsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-      <PopularProfiles mobile />
+        <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
+        {!query ? (
+          <i className={styles.CloseIcon} onClick={() => setQuery("")} />
+        ) : (
+          <i
+            className={`fa-solid fa-xmark ${styles.CloseIcon}`}
+            onClick={() => setQuery("")}
+          />
+        )}
+
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -60,7 +71,7 @@ function PostsPage({ message, filter = "" }) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search posts"
+            placeholder="Search homeShots"
           />
         </Form>
 
@@ -68,6 +79,7 @@ function PostsPage({ message, filter = "" }) {
           <>
             {posts.results.length ? (
               <InfiniteScroll
+                // eslint-disable-next-line react/no-children-prop
                 children={posts.results.map((post) => (
                   <Post key={post.id} {...post} setPosts={setPosts} />
                 ))}
@@ -88,8 +100,9 @@ function PostsPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-      <PopularProfiles />
+      <Col md={4} className={`${styles.Sidebar} d-none d-lg-block p-0 p-lg-2`}>
+        <PopularProfiles />
+
       </Col>
     </Row>
   );

@@ -1,19 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { CurrentUserProvider } from './contexts/CurrentUserContext';
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+import { CurrentUserProvider } from "./contexts/CurrentUserContext";
+import { ProfileDataProvider } from "./contexts/ProfileDataContext";
+import { AlertProvider } from "./contexts/AlertContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
+  <Router>
+    <ScrollToTop />
+    <AlertProvider>
       <CurrentUserProvider>
-        <App />
+        <ProfileDataProvider>
+          <App />
+        </ProfileDataProvider>
       </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </AlertProvider>
+  </Router>,
   document.getElementById("root")
 );
 
