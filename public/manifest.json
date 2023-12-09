@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "homeShot",
+  "name": "homeShot upload and share your favourite recipes",
   "icons": [
     {
       "src": "favicon.ico",
