@@ -1,37 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
-import Asset from "../../components/Asset";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/PopularProfiles.module.css";
+import Asset from "../Asset";
+import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
+import HomeShoters from "../../assets/homeshoters.webp";
 
 const PopularProfiles = ({ mobile }) => {
-  const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
-    pageProfile: { results: [] },
-    popularProfiles: { results: [] },
-  });
-  const { popularProfiles } = profileData;
-  const currentUser = useCurrentUser();
-
-  useEffect(() => {
-    const handleMount = async () => {
-      try {
-        const { data } = await axiosReq.get(
-          "/profiles/?ordering=-followers_count"
-        );
-        setProfileData((prevState) => ({
-          ...prevState,
-          popularProfiles: data,
-        }));
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    handleMount();
-  }, [currentUser]);
+  const { popularProfiles } = useProfileData();
 
   return (
     <Container
@@ -41,17 +18,29 @@ const PopularProfiles = ({ mobile }) => {
     >
       {popularProfiles.results.length ? (
         <>
-          <p>Most followed profiles.</p>
+          <p className={styles.Title}>
+            Popular{" "}
+            <img
+              className={styles.HomeShoters}
+              src={HomeShoters}
+              alt="Popular HomeShoters"
+              height="20"
+            />
+          </p>
           {mobile ? (
             <div className="d-flex justify-content-around">
-              {popularProfiles.results.slice(0, 4).map((profile) => (
-                <Profile key={profile.id} profile={profile} mobile />
-              ))}
+              {popularProfiles.results
+                .slice(0, 5)
+                .filter((profile) => profile.followers_count >= 2)
+                .map((profile) => (
+                  <Profile key={profile.id} profile={profile} mobile />
+                ))}
             </div>
           ) : (
-            popularProfiles.results.map((profile) => (
-              <Profile key={profile.id} profile={profile} />
-            ))
+            popularProfiles.results
+              .slice(0, 6)
+              .filter((profile) => profile.followers_count >= 1)
+              .map((profile) => <Profile key={profile.id} profile={profile} />)
           )}
         </>
       ) : (

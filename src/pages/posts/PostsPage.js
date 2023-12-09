@@ -18,6 +18,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../../components/profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import PopularPosts from "../../components/posts/PopularPosts";
+import HomeShotMessage from "../../components/HomeShotMessage";
+import FollowedHomeShoters from "../../components/FollowedHomeShoters";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -77,6 +80,13 @@ function PostsPage({ message, filter = "" }) {
 
         {hasLoaded ? (
           <>
+            {window.location.pathname === "/liked" ? (
+              <HomeShotMessage message="You Liked" />
+            ) : window.location.pathname === "/feed" ? (
+              <FollowedHomeShoters />
+            ) : (
+              " "
+            )}
             {posts.results.length ? (
               <InfiniteScroll
                 // eslint-disable-next-line react/no-children-prop
@@ -102,7 +112,7 @@ function PostsPage({ message, filter = "" }) {
       </Col>
       <Col md={4} className={`${styles.Sidebar} d-none d-lg-block p-0 p-lg-2`}>
         <PopularProfiles />
-
+        <PopularPosts />
       </Col>
     </Row>
   );
