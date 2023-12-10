@@ -2,6 +2,7 @@
     text-align: center;
     font-weight: 500;
     font-size: 1.2em;
+    margin-top: 30px;
 }
 
 .TitleBold {
@@ -9,5 +10,5 @@
 }
 
 .HomeShoters {
-    margin-top: -4px;
+    margin-top: -3px;
 }

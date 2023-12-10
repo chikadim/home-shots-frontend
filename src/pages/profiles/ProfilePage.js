@@ -25,6 +25,7 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.webp";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import Fab from "@mui/material/Fab";
+import PopularPosts from "../../components/posts/PopularPosts";
 
 import HomeShotMessage from "../../components/HomeShotMessage";
 
@@ -138,7 +139,7 @@ function ProfilePage() {
 
   const mainProfilePosts = (
     <>
-      <HomeShotMessage message={`${profile?.owner} Created`} />
+      <HomeShotMessage message={`Created by ${profile?.owner}`} />
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -159,7 +160,7 @@ function ProfilePage() {
   );
 
   return (
-    <Row>
+    <Row className="mt-4">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         {hasLoaded ? (
@@ -174,7 +175,7 @@ function ProfilePage() {
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
-
+        <PopularPosts />
       </Col>
     </Row>
   );

@@ -45,6 +45,8 @@ function PopularPosts({ mobile, message, filter = "" }) {
     <Container
       className={`${appStyles.Content} ${
         mobile && "d-lg-none text-center mb-3"
+      } ${
+        styles.PopularHomeShots
       }`}
     >
       {hasLoaded ? (

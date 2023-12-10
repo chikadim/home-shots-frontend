@@ -11,3 +11,8 @@
 .HomeShoters {
     margin-top: -4px;
 }
+
+.PopularHomeShots {
+    margin-top: 16px;
+    border-radius: 20px;
+}
