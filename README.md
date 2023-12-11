@@ -161,6 +161,24 @@ The structure of the website is divided into pages but with content depending on
 ### _Skeleton_
 
 ### _Surface_
+**Color Scheme** I decided to stick with the high contrast colour palette to maintain a nice visual contrast when viewing the site.
+-   Background: #ffffff
+-   Headings: #000000
+-   Navbar: #f8f8f8
+
+**Typography** I used the DM Sans font for the complete site to keep it clean and modern.
+
+**Media** I decided to stick with the high contrast colour palette to maintain a nice visual contrast when viewing the site.
+-   All images are from<a href="https://unsplash.com/" target="_blank"> Unsplash </a>
+-   The logo and favicon are designed by me in<a href="https://www.figma.com" target="_blank"> Figma </a>
+
+**Wireframes** Initial Wireframes
+The wireframes were created using <a href="https://figma.com/">Figma</a>
+
+-   Desktop
+
+![Desktop](documentation/wireframes/foodsnap-wire-dt.webp)
+<br>
 
 ## Agile Methodology
 ### User Story
