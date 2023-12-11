@@ -5,7 +5,7 @@ import styles from "../../styles/PopularProfiles.module.css";
 import Asset from "../Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
-import HomeShoters from "../../assets/homeshoters.webp";
+import homeShoters from "../../assets/homeshoters.webp";
 
 const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();
@@ -24,7 +24,7 @@ const PopularProfiles = ({ mobile }) => {
             Popular{" "}
             <img
               className={styles.HomeShoters}
-              src={HomeShoters}
+              src={homeShoters}
               alt="Popular HomeShoters"
               height="20"
             />

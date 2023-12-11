@@ -91,6 +91,7 @@ const ProfileEditForm = () => {
       <Form.Group>
         <Form.Label>Bio</Form.Label>
         <Form.Control
+          className="mb-3"
           as="textarea"
           value={content}
           onChange={handleChange}
@@ -121,7 +122,7 @@ const ProfileEditForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Row>
+      <Row className="mt-3">
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={`${appStyles.Content} ${appStyles.Margin}`}>
             <Form.Group>
