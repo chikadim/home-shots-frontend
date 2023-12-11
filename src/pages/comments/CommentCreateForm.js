@@ -59,11 +59,12 @@ function CommentCreateForm(props) {
             value={content}
             onChange={handleChange}
             rows={2}
+            id="comment"
           />
         </InputGroup>
       </Form.Group>
       <button
-        className={`${styles.Button} btn d-block ml-auto`}
+        className={`${styles.Button} btn d-block ms-auto`}
         disabled={!content.trim()}
         type="submit"
       >

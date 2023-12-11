@@ -53,7 +53,7 @@ const Comment = (props) => {
   return (
     <>
       <hr />
-      <Media>
+      <Media className="position-relative">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
@@ -74,10 +74,13 @@ const Comment = (props) => {
           )}
         </Media.Body>
         {is_owner && !showEditForm && (
-          <MoreDropdown
+          <div className="position-absolute top-0 end-0">
+            <MoreDropdown
             handleEdit={() => setShowEditForm(true)}
             handleDelete={handleDelete}
           />
+          </div>
+          
         )}
       </Media>
     </>

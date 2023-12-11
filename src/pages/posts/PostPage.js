@@ -15,6 +15,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../../components/profiles/PopularProfiles";
+import PopularPosts from "../../components/posts/PopularPosts";
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
 
@@ -53,7 +55,7 @@ function PostPage() {
   }, [id]);
 
   return (
-    <Row className="h-100">
+    <Row className="h-100 mt-4">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         
         {hasLoaded ? (
@@ -106,7 +108,8 @@ function PostPage() {
         )}
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        
+      <PopularProfiles />
+      <PopularPosts />  
       </Col>
     </Row>
   );

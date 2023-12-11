@@ -61,8 +61,8 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (
-    <Tooltip title="Click to edit your profile" placement="bottom" arrow>
-      <Dropdown className={`ms-auto px-3 ${styles.Absolute}`} drop="left">
+    <Tooltip className="position-relative" title="Click to edit your profile" placement="bottom" arrow>
+      <Dropdown className={`ml-auto px-3 position-absolute start-50`} drop="left">
         <Dropdown.Toggle as={ThreeDots} />
         <Dropdown.Menu>
           <Dropdown.Item
