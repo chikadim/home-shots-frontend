@@ -78,6 +78,7 @@ function PostCreateForm() {
       <Form.Group>
         <Form.Label className={styles.FormTitle}>Title</Form.Label>
         <Form.Control
+          className="mb-3"
           type="text"
           name="title"
           value={title}
@@ -92,6 +93,7 @@ function PostCreateForm() {
       <Form.Group>
         <Form.Label className={styles.FormTitle}>Description</Form.Label>
         <Form.Control
+          className="mb-2"
           as="textarea"
           rows={6}
           name="content"
