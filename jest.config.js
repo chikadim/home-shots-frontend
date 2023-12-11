@@ -1,1 +1,0 @@
-export const setupFiles = ['./jest.polyfills.js'];
