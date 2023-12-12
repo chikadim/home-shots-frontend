@@ -2,7 +2,7 @@
 
 <a id="top" href="https://home-shots-c660d38e541d.herokuapp.com/" target="_blank"><img src="documentation/readmeimages/logo.webp"></a><br />
 # HomeShots - A web app for home aesthetics enthusiasts to share images of beautiful homes
-<img src=""><br>
+<br>
 
 <h1 id="contents">Contents</h1>
 
