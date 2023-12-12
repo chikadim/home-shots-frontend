@@ -28,6 +28,7 @@
     "allowEmptyCatch": 0,
     "react/no-children-prop": "off",
     "no-undef": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "no-empty": "off"
     }
 }
