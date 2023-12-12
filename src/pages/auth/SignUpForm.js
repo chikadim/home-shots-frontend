@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import logo from "../../assets/logo.webp";
+import logo from "../../assets/largelogo.webp";
 import useAlert from "../../hooks/useAlert";
 
 import {
