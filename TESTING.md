@@ -41,3 +41,7 @@ The code now validates with ESLint
 <h1 id="html-validation">HTML Validation</h1>
 
 ![HTML Validation Result](documentation/testing/html-validation.webp)
+
+<h1 id="html-validation">HTML Validation</h1>
+
+![Lighthouse Validation Result](documentation/testing/lighthouse.webp)
