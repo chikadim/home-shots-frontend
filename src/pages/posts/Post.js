@@ -140,7 +140,7 @@ const Post = (props) => {
         </Media>
       </Card.Body>
       <Link to={`/posts/${id}`}>
-        <Card.Img src={image} alt={title} />
+        <Card.Img src={image} alt={title} className="w-100 h-100"/>
       </Link>
       <Card.Body>
         {title && (
